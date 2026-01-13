@@ -27,6 +27,7 @@ public class Node<E> {
         return next;
     }
 
+
     @Override
     public String toString() {
         return (String) value;

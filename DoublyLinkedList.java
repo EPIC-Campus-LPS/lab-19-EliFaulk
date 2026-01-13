@@ -1,8 +1,12 @@
 public class DoublyLinkedList<E> implements List{
 
+    private Node<E> headNode;
+
     @Override
     public void add(Object element) {
-
+        if (headNode.getValue() == null) {
+            headNode = (Node<E>) element;
+        } else
     }
 
     @Override
