@@ -1,3 +1,5 @@
+package main;
+
 public class Node<E> {
     private E value;
     private Node<E> previous;
@@ -7,8 +9,23 @@ public class Node<E> {
         value = val;
     }
 
+    public Node(E val, Node<E> prev) {
+        value = val;
+        previous = prev;
+    }
+
+    public Node(E val, Node<E> prev, Node<E> nex) {
+        value = val;
+        previous = prev;
+        next = nex;
+    }
+
     public E getValue() {
         return value;
+    }
+
+    public void setValue(Object v) {
+        value = ((E) v);
     }
 
     public void setPrevNode(Node<E> node) {
@@ -30,10 +47,10 @@ public class Node<E> {
 
     @Override
     public String toString() {
-        return (String) value;
+        return String.valueOf(value);
     }
 
-    @Override
+
     public boolean equals(Node<E> node) {
         return node.getValue() == value;
     }

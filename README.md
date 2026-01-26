@@ -1,52 +1,52 @@
-# Doubly Linked List
+# Doubly Linked main.List
 
 ## Objective
 
-- Create a `Node<E>` class using generics to hold a value and the prev/next node in the list
-- Using `Node`, implement a `DoublyLinkedList` class that implements the provided `List` interface.
+- Create a `main.Node<E>` class using generics to hold a value and the prev/next node in the list
+- Using `main.Node`, implement a `main.DoublyLinkedList` class that implements the provided `main.List` interface.
 
-### `Node<E>` Class
+### `main.Node<E>` Class
 
-You will use this `Node<E>` class to represent a node in your `DoublyLinkedList`. This class should be able to hold a value  of any type and the previous/next node when appropriate. When there is no previous or next node, the values should be `null`.
+You will use this `main.Node<E>` class to represent a node in your `main.DoublyLinkedList`. This class should be able to hold a value  of any type and the previous/next node when appropriate. When there is no previous or next node, the values should be `null`.
 
 Create and implement the class as you see fit with necessary instance variables, constructors, and getter/setter methods, keeping in mind how it will be used by other classes.
 
-In addition to the required `Node` functionality, your `Node` class should include the following methods.
+In addition to the required `main.Node` functionality, your `main.Node` class should include the following methods.
 
 - Overrides `String toString()` to print out the value of the node
-- Overloads `boolean equals(Node<E> node)` and returns true if the nodes are equivalent and false otherwise
+- Overloads `boolean equals(main.Node<E> node)` and returns true if the nodes are equivalent and false otherwise
 
-As an example `Node` class should print `rubber goose` and `false` when the following program is run.
+As an example `main.Node` class should print `rubber goose` and `false` when the following program is run.
 **This is not a comprehensive test of the functionality of your class. You are responsible for rigorously testing your own program.**
 
 ```
-Node<String> first = new Node<>("obtuse");  
+main.Node<String> first = new main.Node<>("obtuse");  
   
-Node<String> next = new Node<>("rubber goose");  
+main.Node<String> next = new main.Node<>("rubber goose");  
 first.setNextNode(next);  
 next.setPrevNode(first);  
   
-Node<String> after = new Node<>("guava juice", next);  
+main.Node<String> after = new main.Node<>("guava juice", next);  
 next.setNextNode(after);  
 System.out.println(after.getPrevNode().getValue()); // "rubber goose"  
   
-Node<String> last = new Node<>("giant snake");  
+main.Node<String> last = new main.Node<>("giant snake");  
 System.out.println(next.equals(last));
 ```
 
-### DoublyLinkedList
+### main.DoublyLinkedList
 
-Create a class `DoublyLinkedList<E>` that implements the provided `List` interface. This class should implement a doubly linked list of a generic type using `Node<E>`. 
+Create a class `main.DoublyLinkedList<E>` that implements the provided `main.List` interface. This class should implement a doubly linked list of a generic type using `main.Node<E>`. 
 
-Since your class implements the `List` interface, your class must contain (at least) all the methods defined by the interface. They should fulfill the functionality described by the comments in the interface and throw all exceptions as described. You may add any private helper methods or private instance variables you need to complete the functionality of the class. You will at least need to a default constructor that creates an empty list.
+Since your class implements the `main.List` interface, your class must contain (at least) all the methods defined by the interface. They should fulfill the functionality described by the comments in the interface and throw all exceptions as described. You may add any private helper methods or private instance variables you need to complete the functionality of the class. You will at least need to a default constructor that creates an empty list.
 
-*Tip:* Create a new class called `DoublyLinkedList` then add `implements List` to the header. Then use the context actions to populate your class with all the required method headers and Javadoc comments. Since you are implementing an interface that uses generics, you will need to use `Object` in place of `E` for your program. If you run into errors when creating and manipulating node, _casting_ should help resolve the error.
+*Tip:* Create a new class called `main.DoublyLinkedList` then add `implements main.List` to the header. Then use the context actions to populate your class with all the required method headers and Javadoc comments. Since you are implementing an interface that uses generics, you will need to use `Object` in place of `E` for your program. If you run into errors when creating and manipulating node, _casting_ should help resolve the error.
 
 Your class should produce the stated output for the given program.
 **This is not a comprehensive test of the functionality of your class. You are responsible for rigorously testing your own program.**
 
 ```
-DoublyLinkedList<Integer> list = new DoublyLinkedList<>();  
+main.DoublyLinkedList<Integer> list = new main.DoublyLinkedList<>();  
 list.add(10);  
 list.add(20);  
 list.add(30);  
@@ -81,4 +81,4 @@ When writing test cases, focus not just on writing tests to test the accuracy of
 
 ### Javadoc
 
-For your `Node` class and `DoublyLinkedList` class, generate proper Javadoc documentation. The classes you generate to run your JUnit test do not have to commented using Javadoc notation, but should still include inline comments and follow style conventions to make their function understandable to an outside user.
+For your `main.Node` class and `main.DoublyLinkedList` class, generate proper Javadoc documentation. The classes you generate to run your JUnit test do not have to commented using Javadoc notation, but should still include inline comments and follow style conventions to make their function understandable to an outside user.
