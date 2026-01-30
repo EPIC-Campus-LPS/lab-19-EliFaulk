@@ -1,5 +1,3 @@
-package main;
-
 public class DoublyLinkedList<E> implements List{
 
     private Node<E> headNode;

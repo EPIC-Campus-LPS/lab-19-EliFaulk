@@ -1,5 +1,3 @@
-package main;
-
 public class Node<E> {
     private E value;
     private Node<E> previous;
