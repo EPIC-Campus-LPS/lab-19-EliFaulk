@@ -18,7 +18,6 @@ public class DoublyLinkedList<E> implements List{
             prev = temp;
             temp = temp.getNextNode();
         }
-        // After the for loop, temp should be null and prev should be the last node
         prev.setNextNode(new Node<E>((E) element));
     }
 
@@ -62,7 +61,6 @@ public class DoublyLinkedList<E> implements List{
 
     @Override
     public Node<E> remove(int i) throws IndexOutOfBoundsException {
-        //Iterate to node at index = i
         Node<E> temp = headNode;
         Node<E> prev = headNode;
 
@@ -71,13 +69,12 @@ public class DoublyLinkedList<E> implements List{
             temp = temp.getNextNode();
         }
 
-        //Set previous node's next node
+
         prev.setNextNode(temp.getNextNode());
-        //Set next node's previous node
         if (temp.getNextNode() != null) {
             temp.getNextNode().setPrevNode(prev);
         }
-        //Remove and return deleted node
+
         return temp;
     }
 
@@ -112,10 +109,10 @@ public class DoublyLinkedList<E> implements List{
     public int size() {
         Node<E> temp = headNode;
         int num = 1;
-        if (headNode.getValue() == null) {      // Base case, no list
+        if (headNode.getValue() == null) {
             return 0;
         } else {
-            while (temp.getNextNode() != null) {        // Count each next node and add to size count
+            while (temp.getNextNode() != null) {
                 num++;
                 temp = temp.getNextNode();
             }

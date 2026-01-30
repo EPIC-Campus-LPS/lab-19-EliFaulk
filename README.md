@@ -64,7 +64,7 @@ System.out.println(list.toString()); // [5, 10, 40]
 ```
 ### JUnit
 
-This lab, we are going to start **JUnit testing**. JUnit is a framework for creating and running test cases in your project. From here on out, you will need to write appropriate JUnit tests for all of your projects. For this lab, create a class called `DoublyLinkedListTest` for your test cases.
+This lab, we are going to start **JUnit testing**. JUnit is a framework for creating and running test cases in your project. From here on out, you will need to write appropriate JUnit tests for all of your projects. For this lab, create a class called `main.DoublyLinkedListTest` for your test cases.
 
 _Tip: _ To easily create your test class, put your cursor in your class header and press 'Alt-Enter' then select 'Create test'. From the menu, you can then select all the methods you want to create tester methods, and it will auto-generate your class for you. Then, use context actions again to add to the correct library to your classpath. This is often significantly easier than searching for the necessary package.
 
