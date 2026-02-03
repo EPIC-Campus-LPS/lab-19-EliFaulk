@@ -29,6 +29,9 @@ public class DoublyLinkedList<E> implements List{
         if (headNode == null) {
             headNode = new Node<E>((E) element);
             return;
+        } else if (i < 0) {
+            System.out.println("Cannot add node at a negative index: " + i);
+            return;
         } else if (i == 0) {
             Node<E> thing = new Node<E>((E) element);
             thing.setNextNode(headNode);
@@ -41,9 +44,17 @@ public class DoublyLinkedList<E> implements List{
             prev = temp;
             temp = temp.getNextNode();
         }
-        Node<E> thing = new Node<E>((E) element, prev, temp);
-        temp.setPrevNode(thing);
-        prev.setNextNode(thing);
+        Node<E> thing = new Node<E>((E) element);
+        if (temp != null)
+        {
+            temp.setPrevNode(thing);
+            thing.setNextNode(temp);
+        }
+        if (prev != null)
+        {
+            prev.setNextNode(thing);
+            thing.setPrevNode(prev);
+        }
     }
 
     @Override
@@ -63,6 +74,16 @@ public class DoublyLinkedList<E> implements List{
     public Node<E> remove(int i) throws IndexOutOfBoundsException {
         Node<E> temp = headNode;
         Node<E> prev = headNode;
+
+        if (i == 0)
+        {
+            temp = headNode.getNextNode();
+            headNode = temp;
+            headNode.setPrevNode(null);
+        } else if (i < 0)
+        {
+            System.out.println("Cannot remove node from a negative index: " + i);
+        }
 
         for (int x = 0; x < i; x++) {
             prev = temp;
@@ -109,7 +130,7 @@ public class DoublyLinkedList<E> implements List{
     public int size() {
         Node<E> temp = headNode;
         int num = 1;
-        if (headNode.getValue() == null) {
+        if (headNode == null) {
             return 0;
         } else {
             while (temp.getNextNode() != null) {
@@ -129,6 +150,11 @@ public class DoublyLinkedList<E> implements List{
     public String toString() {
         Node<E> temp = headNode;
         String result = "[";
+
+        if (headNode == null)
+        {
+            return "[]";
+        }
 
         for (int i = 0; i < size(); i++) {
             result = result + temp.getValue() + ", ";

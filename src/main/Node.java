@@ -5,6 +5,9 @@ public class Node<E> {
     private Node<E> previous;
     private Node<E> next;
 
+    /**
+     * @param val
+     */
     public Node(E val) {
         value = val;
     }
