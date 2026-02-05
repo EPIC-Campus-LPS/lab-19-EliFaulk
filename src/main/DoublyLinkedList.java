@@ -4,6 +4,10 @@ public class DoublyLinkedList<E> implements List{
 
     private Node<E> headNode;
 
+    /**
+     * Add a new value to the end of the list as a Node
+     * @param element (element to add to the list)
+     */
     @Override
     public void add(Object element) {
         Node<E> temp = headNode;
@@ -21,6 +25,12 @@ public class DoublyLinkedList<E> implements List{
         prev.setNextNode(new Node<E>((E) element));
     }
 
+    /**
+     * Add a new value to the specified index of the list as a Node
+     * @param i       index of the element
+     * @param element element to add to the list
+     * @throws IndexOutOfBoundsException
+     */
     @Override
     public void add(int i, Object element) throws IndexOutOfBoundsException {
         Node<E> temp = headNode;
@@ -57,6 +67,9 @@ public class DoublyLinkedList<E> implements List{
         }
     }
 
+    /**
+     * Remove every element from the doubly linked list
+     */
     @Override
     public void remove() {
         //Iterate through whole list and remove connections
@@ -70,6 +83,12 @@ public class DoublyLinkedList<E> implements List{
         headNode = null;
     }
 
+    /**
+     * Remove the node at the specified index from the list
+     * @param i index of the element to remove
+     * @return node removed
+     * @throws IndexOutOfBoundsException
+     */
     @Override
     public Node<E> remove(int i) throws IndexOutOfBoundsException {
         Node<E> temp = headNode;
@@ -99,6 +118,12 @@ public class DoublyLinkedList<E> implements List{
         return temp;
     }
 
+    /**
+     * Get the node at the specified index in the list
+     * @param i index of the element
+     * @return node at specified index
+     * @throws IndexOutOfBoundsException
+     */
     @Override
     public Node<E> get(int i) throws IndexOutOfBoundsException {
         Node<E> temp = headNode;
@@ -112,6 +137,12 @@ public class DoublyLinkedList<E> implements List{
         return temp;
     }
 
+    /**
+     * Set the value of the node at the specified index in the list
+     * @param i       index of the element to set
+     * @param element new value of the element
+     * @throws IndexOutOfBoundsException
+     */
     @Override
     public void set(int i, Object element) throws IndexOutOfBoundsException {
         Node<E> temp = headNode;
@@ -126,6 +157,10 @@ public class DoublyLinkedList<E> implements List{
         temp.setValue(element);
     }
 
+    /**
+     * Get the number of nodes/values in the list
+     * @return # of nodes in list
+     */
     @Override
     public int size() {
         Node<E> temp = headNode;
@@ -141,11 +176,19 @@ public class DoublyLinkedList<E> implements List{
         }
     }
 
+    /**
+     * Check if there are any nodes in the list
+     * @return true if headNode is null
+     */
     @Override
     public boolean isEmpty() {
         return headNode == null;
     }
 
+    /**
+     * Get the values in the list as a single string
+     * @return list as a string in format [_, _, _, _]
+     */
     @Override
     public String toString() {
         Node<E> temp = headNode;
